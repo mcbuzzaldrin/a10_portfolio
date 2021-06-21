@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import sanityClient from '../client';
 import {Link} from 'react-router-dom';
 import imageUrlBuilder from '@sanity/image-url';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const builder = imageUrlBuilder(sanityClient);
 
@@ -32,7 +33,11 @@ export default function Paintings() {
             {allPostsData && allPostsData.map((post, index) => (
                 <Link to={'/paintings/' + post.slug.current} key={post.slug.current}style={{width: '25%'}}>
                     <span key={index}>
-                        <img src={urlFor(post.mainImage.asset.url)} alt={post.title} />
+                        <LazyLoadImage
+                            src={urlFor(post.mainImage.asset.url)}
+                            alt={post.title}
+                            effect='blur'
+                        />
                         <span><h2>{post.title}</h2></span>
                     </span>
                 </Link>
