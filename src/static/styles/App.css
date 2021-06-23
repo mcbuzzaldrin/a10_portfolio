@@ -14,39 +14,61 @@ body {
 }
 .App {
   text-align: center;
-    font-family: 'Permanent marker', cursive;
+  font-family: 'Permanent marker', cursive;
   height: 100%;
-    width: 100%;
+  width: 100%;
+  color: white;
 }
-
-.App-logo {
+.navigation {
   height: 20vmin;
-  pointer-events: none;
-  margin-top: 15px;
-}
-
-nav {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
-  align-content: space-between;
-  height: 15vmin;
-  flex: 0 1 25%;
+  align-items: center;
+  margin-bottom: 30px;
+  margin-top: 15px;
+}
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+  padding-bottom: 5px;
+}
+.nav-options {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+.option {
+  font-size: xx-large;
+}
+.mobile-option {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
 }
 
 a {
   color: orange;
   text-decoration: none;
 }
-
+.main-paintings {
+  margin-bottom: 50px;
+}
+.main-paintings a {
+  width: 50%;
+}
 .main-paintings img {
   width: 50%;
   height: auto;
 }
 
-img {
+.Painting {
+  margin-bottom: 50px;
+}
+.Painting img {
   width: 80%;
   height: auto;
 }
@@ -56,39 +78,57 @@ img {
   flex-wrap: wrap;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 768px) {
+  .menu-icon {
+    width: 45px;
+    height: 45px;
   }
-}
-@media only screen and (min-width: 768px) {
-  nav {
-    flex: 0 1 25%;
+  .mobile-menu {
+    display: block;
   }
 
+  .nav-options {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+    flex-direction: column;
+    list-style-type: none;
+    grid-gap: 0px;
+  }
+
+  .nav-options.active {
+    background: #9899d1;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+    align-content: center;
+    padding-left: 0px;
+  }
+  .option {
+    font-size: large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0px;
+  }
+
+  .main-paintings {
+    flex-direction: column;
+  }
   .main-paintings a {
-    width: 50%;
+    width: 75%;
     height: auto;
     margin: auto;
   }
   .main-paintings img {
-    width: 50%;
+    width: 75%;
     height: auto;
   }
-}
-@media only screen and (min-width: 768px) {
-
-}
-
-.App-header {
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  padding: 30px;
 }
 
 .App-link {
@@ -107,7 +147,7 @@ iframe {
 }
 
 .main-bio {
-  width: 50%;
+  width: 75%;
   height: auto;
   margin: auto;
 }
@@ -118,12 +158,9 @@ section p {
 .main-Home p {
   font-size: x-large;
 }
-.App {
-  color: white;
-}
 
 .main-Home {
-  width: 50%;
+  width: 75%;
   height: auto;
   margin: auto;
 }
