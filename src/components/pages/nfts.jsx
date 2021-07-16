@@ -1,10 +1,9 @@
 import React from 'react';
-import {iframeResizer} from 'iframe-resizer';
 
 const theme = '?embed=simple';
 export default class Nfts extends React.Component {
     componentDidMount() {
-        iframeResizer({log: false}, '#opensea-iframe');
+
     }
     render() {
         return(

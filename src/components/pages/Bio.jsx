@@ -1,6 +1,7 @@
 import React from 'react';
-import { SocialIcon } from 'react-social-icons';
+
 export default class Bio extends React.Component {
+
     render() {
         return (
             <div className='main-bio'>
@@ -13,9 +14,13 @@ export default class Bio extends React.Component {
                     <p>I place African patterns to scene layout, reflecting my love for Art Deco</p>
                     <p>I paint to provoke thoughts and generate narratives that reflect my experiences.</p>
                 </section>
-                <a href='https://www.instagram.com/kingpin.makh/' style={{margin: 'auto'}}>
-                    Instagram: @kingpin.makh<SocialIcon url='https://www.instagram.com/kingpin.makh/' />
-                </a>
+                <section>
+                    <p>Have a question or would like to contact me regarding business opportunities? </p>
+                    <a
+                        href='https://us6.list-manage.com/contact-form?u=18cce188b2119215d1bbcb027&form_id=b524337d8eab21a5267ff97f956b0897'>
+                        Contact Me
+                    </a>
+                </section>
             </div>
         )
     }
